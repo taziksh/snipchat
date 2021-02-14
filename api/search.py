@@ -27,7 +27,7 @@ class SpotifySearch(Search):
         spotify = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=self.config['SPOTIFY_CLIENT_ID'], client_secret=self.config['SPOTIFY_CLIENT_SECRET']))
         results = spotify.search(q=phrase, type='track', limit=5)
         tracks = [track['name'] for idx, track in enumerate(results['tracks']['items'])]
-        return tracks[0]
+        return tracks
 
 class YouTubeSearch(Search):
     def search(self, track):

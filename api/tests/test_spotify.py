@@ -1,6 +1,9 @@
 import pytest
 
+from ..search import SpotifySearch
+
 def test_spotify_search():
-    pass
+    SS = SpotifySearch()
+    title = SS.search('wait for it')
     
     

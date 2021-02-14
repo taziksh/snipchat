@@ -2,28 +2,25 @@ import pytest
 
 from pprint import pprint
 
-from ..search import SpotifySearch, YoutubeSearch
+from ..search import SpotifySearch, YouTubeSearch
+from ..download import AZLyrics
+from ..text import Utilities 
 
 def test_flow():
-    ss = SpotifySearch()
-    title = ss.search('wait for it')
+    substring = 'wait for it'
+    SS = SpotifySearch()
+    titles = SS.search(substring)
 
-    ys = YoutubeSearch()
-    print(ys.search(title))
-    '''
-    from ..lyrics.spotify import search as search_lyrics
-    from ..lyrics.download import download as get_lyrics
-    from ..youtube.search import search as search_videos
+    YS = YouTubeSearch()
+    #id = YS.search(title)
 
-    title = search_lyrics("wait for it")
-    pprint(title)
-    
-    lyrics = get_lyrics(title)
-    print(lyrics)
-    
-    video_id = search_videos(title)
-    pprint(video_id)
-    '''
-    pass
+    AZ = AZLyrics()
+    lyrics = AZ.download(titles[0]) 
+    #print(lyrics)
+
+    phonemes = {}
+
+
+
  
 
