@@ -22,12 +22,15 @@ class SpotifySearch(Search):
 
     #TODO: compare results, possibly based on additional info from frontend
     #TODO: return track['duration_ms], track['album']['artists']
-    def search(self, phrase):
-        """ Return tracks that match keywords in given phrase. """
+    def search(self, query):
+        """ Return tracks that match keywords in given query. """
         spotify = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=self.config['SPOTIFY_CLIENT_ID'], client_secret=self.config['SPOTIFY_CLIENT_SECRET']))
-        results = spotify.search(q=phrase, type='track', limit=5)
-        tracks = [track['name'] for idx, track in enumerate(results['tracks']['items'])]
-        return tracks
+        response = spotify.search(q=query, type='track', limit=5)
+        #TODO: only returning first result...?
+        results = ()
+        for i, track in enumerate(response['tracks']['items']):
+            results = results + (track['name'], track['duration_ms'])
+        return results 
 
 class YouTubeSearch(Search):
     def search(self, track):

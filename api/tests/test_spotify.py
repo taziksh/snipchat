@@ -1,9 +1,10 @@
 import pytest
-
 from ..search import SpotifySearch
 
 def test_spotify_search():
     SS = SpotifySearch()
-    title = SS.search('wait for it')
+    #list of tuples!
+    results = SS.search('close the door on your way out')
+    print(results[0], results[1])
     
     
