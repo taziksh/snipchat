@@ -9,6 +9,7 @@ from functools import lru_cache
 from itertools import product as iterprod
 
 #TODO: stick with stmspell defaults more
+#TODO: "dont" ?= "don't"
 class Utilities:
     def __init__(self):
         self.sym_spell = SymSpell(max_dictionary_edit_distance=2, prefix_length=7)
@@ -22,6 +23,7 @@ class Utilities:
             nltk.download('cmudict')
             self.arpabet = nltk.corpus.cmudict.dict()
 
+    #TODO: input string has whitespace
     #TODO: write more robust regex for musicals
     def cleaned(self, string, is_musical=False):
         string = re.sub('[,.]', '', string).lower()
