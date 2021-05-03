@@ -5,7 +5,7 @@ Snipchat returns audio snippets based on a given input phrase.
 
 ## Building
 - Run a full example by `python example.py <arg1>...` from the /api directory
-- API request and docs will be available soon
+- API request and docs will be available soon (use Postman's Doc generator!)
 
 
 
