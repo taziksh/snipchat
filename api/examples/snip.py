@@ -29,7 +29,7 @@ lyrics = utils.cleaned(lyrics, is_musical=True)
 substring = utils.cleaned(substring)
 
 phonemes = {}
-#TODO: does fp make more sense https://docs.python.org/3/library/itertools.html#itertools.chain
+#TODO: compose, pipe https://docs.python.org/3/library/itertools.html#itertools.chain
 phonemes['lyrics'] = [p for term in lyrics.split() for p in utils.phonemes_of(term)]
 phonemes['substring'] = [p for term in substring.split() for p in utils.phonemes_of(term)]
 numSubstringPhonemes = len(phonemes['substring'])
