@@ -16,3 +16,4 @@ Snipchat returns audio snippets based on a given input phrase.
 
 ## Future Features
 - [] Search playlists on Spotify. Example use case: "breakdown breakdown" to find JJBA IV op
+- Authenticate with Spotify - BYOT ('token') to handle more users (OFC, not even relevant until we can scale the lyrics acquisition process haha)
