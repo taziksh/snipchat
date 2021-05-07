@@ -25,11 +25,13 @@ class SpotifySearch(Search):
     def search(self, query):
         """ Return tracks that match keywords in given query. """
         spotify = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=self.config['SPOTIFY_CLIENT_ID'], client_secret=self.config['SPOTIFY_CLIENT_SECRET']))
-        response = spotify.search(q=query, type='track', limit=5)
+        response = spotify.search(q=query, type='track', limit=3)
         #TODO: only returning first result...?
         results = ()
+        print('query: ', query)
         for i, track in enumerate(response['tracks']['items']):
             results = results + (track['name'], track['duration_ms'])
+        print('search results: ', results)
         return results 
 
 class YouTubeSearch(Search):

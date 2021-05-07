@@ -1,0 +1,5 @@
+2021/03/12-20:29:33.357 4433f Reusing MANIFEST /home/tazik/code/snipchat/experiments/selenium/Default/IndexedDB/https_b45469b6bcda580c4e4befd7357d11d0.safeframe.googlesyndication.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/03/12-20:29:41.654 44385 Level-0 table #5: started
+2021/03/12-20:29:41.662 44385 Level-0 table #5: 439 bytes OK
+2021/03/12-20:29:41.673 44385 Delete type=0 #3
+2021/03/12-20:29:41.674 44385 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

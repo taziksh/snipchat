@@ -1,0 +1,85 @@
+[1416396:1416396:0503/232729.885052:ERROR:sandbox_linux.cc(374)] InitializeSandbox() called with multiple threads in process gpu-process.
+[1416396:1416396:0503/232730.435452:WARNING:angle_platform_impl.cc(48)] ProgramGL.cpp:989 (checkLinkStatus): Program link or binary loading failed with no info log.
+[1416396:1416396:0503/232730.441872:ERROR:shared_context_state.cc(71)] Skia shader compilation error
+------------------------
+
+Errors:
+
+[1416396:1416396:0503/232730.478982:WARNING:angle_platform_impl.cc(48)] ProgramGL.cpp:989 (checkLinkStatus): Program link or binary loading failed with no info log.
+[1416396:1416396:0503/232730.479104:ERROR:shared_context_state.cc(71)] Skia shader compilation error
+------------------------
+
+Errors:
+
+[1416396:1416396:0503/232730.487840:WARNING:angle_platform_impl.cc(48)] ProgramGL.cpp:989 (checkLinkStatus): Program link or binary loading failed with no info log.
+[1416396:1416396:0503/232730.488037:ERROR:shared_context_state.cc(71)] Skia shader compilation error
+------------------------
+
+Errors:
+
+[1416396:1416396:0503/232731.193524:WARNING:angle_platform_impl.cc(48)] ProgramGL.cpp:989 (checkLinkStatus): Program link or binary loading failed with no info log.
+[1416396:1416396:0503/232731.193731:ERROR:shared_context_state.cc(71)] Skia shader compilation error
+------------------------
+
+Errors:
+
+[1416396:1416396:0503/232731.686326:WARNING:angle_platform_impl.cc(48)] ProgramGL.cpp:989 (checkLinkStatus): Program link or binary loading failed with no info log.
+[1416396:1416396:0503/232731.686543:ERROR:shared_context_state.cc(71)] Skia shader compilation error
+------------------------
+
+Errors:
+
+[1416396:1416396:0503/232732.013556:WARNING:angle_platform_impl.cc(48)] ProgramGL.cpp:989 (checkLinkStatus): Program link or binary loading failed with no info log.
+[1416396:1416396:0503/232732.013699:ERROR:shared_context_state.cc(71)] Skia shader compilation error
+------------------------
+
+Errors:
+
+[1416396:1416396:0503/232732.017915:WARNING:angle_platform_impl.cc(48)] ProgramGL.cpp:989 (checkLinkStatus): Program link or binary loading failed with no info log.
+[1416396:1416396:0503/232732.018437:ERROR:shared_context_state.cc(71)] Skia shader compilation error
+------------------------
+
+Errors:
+
+[1416396:1416396:0503/232732.022514:WARNING:angle_platform_impl.cc(48)] ProgramGL.cpp:989 (checkLinkStatus): Program link or binary loading failed with no info log.
+[1416396:1416396:0503/232732.023192:ERROR:shared_context_state.cc(71)] Skia shader compilation error
+------------------------
+
+Errors:
+
+[1416352:1416352:0503/232732.231614:ERROR:CONSOLE(0)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://www.deezer.com/search/wait%20for%20it (0)
+[1416352:1416352:0503/232737.735128:INFO:CONSOLE(3231)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://www.googletagmanager.com/gtm.js?id=GTM-PPQNZ6 (3231)
+[1416352:1416352:0503/232737.738543:INFO:CONSOLE(3231)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://www.googletagmanager.com/gtm.js?id=GTM-PPQNZ6 (3231)
+[1416352:1416352:0503/232737.749560:INFO:CONSOLE(0)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: about:blank (0)
+[1416352:1416352:0503/232737.763286:INFO:CONSOLE(3231)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://www.googletagmanager.com/gtm.js?id=GTM-PPQNZ6 (3231)
+[1416352:1416352:0503/232737.763549:INFO:CONSOLE(3231)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://www.googletagmanager.com/gtm.js?id=GTM-PPQNZ6 (3231)
+[1416352:1416352:0503/232737.779139:INFO:CONSOLE(0)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: about:blank (0)
+[1416352:1416352:0503/232738.576118:INFO:CONSOLE(1)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://e-cdns-files.dzcdn.net/cache/js/player-HTML5Renderer.5b4a4e1d6ea4110d3dc6.js (1)
+[1416352:1416352:0503/232738.578614:INFO:CONSOLE(1)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://e-cdns-files.dzcdn.net/cache/js/player-HTML5Renderer.5b4a4e1d6ea4110d3dc6.js (1)
+[1416352:1416352:0503/232738.727769:INFO:CONSOLE(0)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://www.deezer.com/search/wait%20for%20it (0)
+[1416352:1416352:0503/232739.720232:INFO:CONSOLE(200)] "Uncaught (in promise) RETRY_LIMIT_REACHED: Api error", source: https://e-cdns-files.dzcdn.net/cache/js/legacy.c7327dde67a25f2fd560.js (200)
+[1416352:1416352:0503/232745.021585:INFO:CONSOLE(1)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://ced-ns.sascdn.com/diff/templates/ts/dist/banner/sas-banner-1.2.js (1)
+[1416352:1416352:0503/232745.024824:INFO:CONSOLE(1)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://ced-ns.sascdn.com/diff/templates/ts/dist/banner/sas-banner-1.2.js (1)
+[1416352:1416352:0503/232745.043998:INFO:CONSOLE(1)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://ced-ns.sascdn.com/diff/templates/ts/dist/banner/sas-banner-1.2.js (1)
+[1416352:1416352:0503/232746.042360:INFO:CONSOLE(6)] "The googletag.pubads().definePassback function has been deprecated. The function may break in certain contexts, see https://developers.google.com/publisher-tag/guides/passback-tags#construct_passback_tags for how to correctly create a passback.", source: https://securepubads.g.doubleclick.net/gpt/pubads_impl_2021042801.js (6)
+[1416352:1416352:0503/232746.391990:INFO:CONSOLE(6)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://securepubads.g.doubleclick.net/gpt/pubads_impl_2021042801.js (6)
+[1416352:1416352:0503/232746.428975:INFO:CONSOLE(0)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: about:blank (0)
+[1416352:1416352:0503/232746.557201:INFO:CONSOLE(6)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101 (6)
+[1416352:1416352:0503/232746.558038:INFO:CONSOLE(6)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101 (6)
+[1416352:1416352:0503/232749.459467:INFO:CONSOLE(26)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: https://tpc.googlesyndication.com/sodar/sodar2.js (26)
+[1416352:1416352:0503/232749.462751:INFO:CONSOLE(0)] "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.", source: about:blank (0)
+[1416352:1416399:0503/232754.642084:WARNING:bus.cc(638)] Bus::SendWithReplyAndBlock took 25024ms to process message: type=method_call, path=/org/freedesktop/Notifications, interface=org.freedesktop.Notifications, member=GetCapabilities
+[1416352:1416399:0503/232754.642212:ERROR:object_proxy.cc(621)] Failed to call method: org.freedesktop.Notifications.GetCapabilities: object_path= /org/freedesktop/Notifications: org.freedesktop.DBus.Error.NoReply: Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+[1416396:1416396:0503/232756.714409:WARNING:angle_platform_impl.cc(48)] ProgramGL.cpp:989 (checkLinkStatus): Program link or binary loading failed with no info log.
+[1416396:1416396:0503/232756.714533:ERROR:shared_context_state.cc(71)] Skia shader compilation error
+------------------------
+
+Errors:
+
+[1416396:1416396:0503/232758.712590:WARNING:angle_platform_impl.cc(48)] ProgramGL.cpp:989 (checkLinkStatus): Program link or binary loading failed with no info log.
+[1416396:1416396:0503/232758.712895:ERROR:shared_context_state.cc(71)] Skia shader compilation error
+------------------------
+
+Errors:
+
+[1416352:1416352:0503/232758.932672:WARNING:pref_notifier_impl.cc(40)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
