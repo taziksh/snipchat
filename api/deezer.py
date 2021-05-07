@@ -10,6 +10,8 @@ parser = argparse.ArgumentParser(description="Args like timeout")
 #TODO: class my dude
 chrome_options = Options()                                                                                                                                     
 #chrome_options.add_argument('--headless')
+
+#N.B. run this from n=2 invokation after fresh install, updates etc. 
 chrome_options.add_argument('user-data-dir=selenium')                                                                                                                      
 driver = webdriver.Chrome(chrome_options=chrome_options)
 driver.scopes = [

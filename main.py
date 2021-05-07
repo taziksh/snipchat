@@ -25,7 +25,7 @@ class Deezer(Resource):
     parser.add_argument('query', type=str, help="Enter phrase from a lyrics -> get it as .mp3 snippet")
     def post(self):
         #TODO: deezer.py -> class 
-        from deezer import intercept 
+        from api.deezer import intercept 
         args = parser.parse_args()
         query = args['query']
         print(query)
