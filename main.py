@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_restx import Resource, Api, reqparse
+from flask_cors import CORS, cross_origin
 import json
 import os
 
@@ -7,6 +8,8 @@ from api.download import YouTubeDownload
 from api.deezer import DeezerSearch 
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 api = Api()
 api.init_app(app)
@@ -27,6 +30,7 @@ class Main(Resource):
 
 
 parser_deezer = parser.copy()
+@cross_origin()
 @api.route('/deezer')
 class DeezerRoute(Resource):
     def post(self):

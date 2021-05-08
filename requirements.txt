@@ -2,6 +2,7 @@ pytest
 
 flask
 flask_restx
+flask-cors
 gunicorn
 
 pyyaml
