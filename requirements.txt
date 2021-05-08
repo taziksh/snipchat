@@ -12,6 +12,7 @@ spotipy
 azapi
 
 symspellpy
+pylcs
 
 nltk
 pronouncing

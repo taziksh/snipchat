@@ -1,3 +1,4 @@
 ./api/downloads/*
 config.yml
+snipchat.json
 /experiments/selenium/*

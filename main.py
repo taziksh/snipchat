@@ -37,7 +37,14 @@ class DeezerRoute(Resource):
         #TODO: s 
         args = parser_deezer.parse_args()
         query = args['query']
-        return DeezerSearch() 
+
+        YD = YouTubeDownload()
+
+        resp = DeezerSearch(query) 
+        #TODO:float -> int roundoff..
+        #N.B. ffmpeg expects INT
+        YD.download(query, int(resp['milliseconds'])/1000, int(resp['duration'])/1000+1)   
+
 
 parser_youtubedownload = parser.copy()
 @api.route('/youtube/download')
