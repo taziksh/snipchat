@@ -1,8 +1,9 @@
 from abc import ABC, abstractmethod 
-
 from azapi import AZlyrics
-
 import youtube_dl, subprocess
+
+from api.search import YouTubeSearch
+
 class Download(ABC):
 
     @abstractmethod
@@ -18,18 +19,20 @@ class AZLyrics(Download):
         self.az.title = title
         return self.az.getLyrics()
         
-class YoutubeDownload(Download):
+class YouTubeDownload(Download):
     #TODO: heuristic for finding video w/ same length
     #TODO: will downgrade of video affect audio quality
     def __init__(self):
         pass
-    def download(self, id, title, _start, _duration):
+    def download(self, title, _start, _duration):
+        YS = YouTubeSearch()
+        id = YS.search(title)
         self.url = "https://www.youtube.com/watch?v=" + id
         self.start = str(_start) 
         self.duration =  str(_duration)
-        self.target = title + ".mp4"
+        self.target = title + ".mp3"
         with youtube_dl.YoutubeDL({'format': 'best'}) as yt_dl:
             result = yt_dl.extract_info(self.url, download=False)
             video = result['entries'][0] if 'entries' in result else result
-        subprocess.run(["ffmpeg", "-ss", self.start, "-i", video['url'], "-t", self.duration, "-c", "copy", self.target])
+        subprocess.run(["ffmpeg", "-ss", self.start, "-i", video['url'], "-t", self.duration, "-vn", self.target])
 

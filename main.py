@@ -3,41 +3,46 @@ from flask_restx import Resource, Api, reqparse
 import json
 import os
 
+from api.download import YouTubeDownload
+from api.deezer import DeezerSearch 
+
 app = Flask(__name__)
 
 api = Api()
 api.init_app(app)
 
 parser = reqparse.RequestParser()
+parser.add_argument('query', case_sensitive=False, help="")
+parser.add_argument('title', case_sensitive=False, help="Song title on YouTube")
+parser.add_argument('start', help="")
+parser.add_argument('duration',  help="")
 #hint: add artist album track name for higher match probability
 
 @api.route('/test1')
 class Main(Resource):
-    parser.add_argument('query', type=str, help="Enter phrase from a lyrics -> get it as .mp3 snippet")
     def post(self):
         args = parser.parse_args()
         print(args)
-        return args['query']
+        return args
 
 
+parser_deezer = parser.copy()
 @api.route('/deezer')
-class Deezer(Resource):
-    parser.add_argument('query', type=str, help="Enter phrase from a lyrics -> get it as .mp3 snippet")
+class DeezerRoute(Resource):
     def post(self):
-        #TODO: deezer.py -> class 
-        from api.deezer import intercept 
-        args = parser.parse_args()
+        #TODO: s 
+        args = parser_deezer.parse_args()
         query = args['query']
-        print(query)
-        lyrics = json.loads(intercept(query))
-        return lyrics
+        return DeezerSearch() 
 
+parser_youtubedownload = parser.copy()
 @api.route('/youtube/download')
-class YouTubeDownload(Resource):
-    #TODO: parser.add_argument('
+class YouTubeDownloadRoute(Resource):
     def post(self):
         args = parser.parse_args()
-        #TODO: importYD, YS...
+        print(args)
+        YD = YouTubeDownload()
+        YD.download(args['title'], args['start'], args['duration'])   
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

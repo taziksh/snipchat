@@ -2,7 +2,7 @@ from argparse import ArgumentParser
 from pprint import pprint
 
 from search import SpotifySearch, YouTubeSearch
-from download import AZLyrics, YoutubeDownload
+from download import AZLyrics, YouTubeDownload
 from text import Utilities 
 
 parser = ArgumentParser(description='Find a song with a few words')
@@ -38,8 +38,5 @@ duration = ((numSubstringPhonemes * total) / len(phonemes['lyrics'])) / 1000;
 
 print(start, duration)
 
-YS = YouTubeSearch()
-id = YS.search(title)
-
-YD = YoutubeDownload()
-YD.download(id, title, start, duration)   
+YD = YouTubeDownload()
+YD.download(title, start, duration)   
