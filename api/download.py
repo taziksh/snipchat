@@ -34,5 +34,5 @@ class YouTubeDownload(Download):
         with youtube_dl.YoutubeDL({'format': 'best'}) as yt_dl:
             result = yt_dl.extract_info(self.url, download=False)
             video = result['entries'][0] if 'entries' in result else result
-        subprocess.run(["ffmpeg", "-ss", self.start, "-i", video['url'], "-t", self.duration, "-vn", self.target])
+        subprocess.run(["ffmpeg", "-ss", self.start, "-i", video['url'], "-t", self.duration, "-vn", "-y", self.target])
 

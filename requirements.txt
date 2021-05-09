@@ -18,7 +18,7 @@ nltk
 pronouncing
 
 youtube-search-python
-youtube_dl
+youtube-dl
 
 pydub
 moviepy
