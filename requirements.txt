@@ -11,11 +11,12 @@ spotipy
 
 azapi
 
-symspellpy
 pylcs
 
-nltk
-pronouncing
+
+#symspellpy
+#nltk
+#pronouncing
 
 youtube-search-python
 youtube-dl
