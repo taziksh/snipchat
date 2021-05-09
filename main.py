@@ -6,6 +6,9 @@ import os
 
 from api.download import YouTubeDownload
 from api.deezer import DeezerSearch 
+from api.text import Utilities 
+#inb4 namespace collisions
+from api.google import Cloud
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -38,13 +41,19 @@ class DeezerRoute(Resource):
         args = parser_deezer.parse_args()
         query = args['query']
 
+        utils = Utilities()
         YD = YouTubeDownload()
 
-        resp = DeezerSearch(query) 
+        lyrics_sync_json = DeezerSearch(query) 
+        resp = utils.lcs_index(query, lyrics_sync_json)
         #TODO:float -> int roundoff..
         #N.B. ffmpeg expects INT
-        YD.download(query, int(resp['milliseconds'])/1000, int(resp['duration'])/1000+1)   
-        return 'lol'
+        file_name = YD.download(query, int(resp['milliseconds'])/1000, int(resp['duration'])/1000+1)   
+        cloud = Cloud()
+        #TODO: create unique blob per invokation
+        cloud.upload_blob("snipchat", file_name, "test1")
+        public_url = cloud.make_blob_public("snipchat", "test1")
+        return public_url
 
 
 parser_youtubedownload = parser.copy()

@@ -1,4 +1,5 @@
 import re
+import pylcs
 
 import pkg_resources
 from symspellpy import SymSpell, Verbosity
@@ -63,3 +64,14 @@ class Utilities:
             return ''
         phonemes = self.arpabet[term]
         return phonemes[0]
+
+    def lcs_index(self, query, lyrics_sync_json):
+        lyrics = []
+        for i in range(len(lyrics_sync_json)):
+            lyrics.append(lyrics_sync_json[i]['line'])
+
+        lcs_lengths = pylcs.lcs_of_list(query, lyrics)
+        print(lcs_lengths)
+        max_index = lcs_lengths.index(max(lcs_lengths)) 
+        return lyrics_sync_json[max_index]
+        

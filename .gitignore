@@ -1,4 +1,5 @@
-./api/downloads/*
+*.mp3
+*.mp4
 config.yml
 snipchat.json
 /experiments/selenium/*

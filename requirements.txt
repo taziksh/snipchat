@@ -24,3 +24,4 @@ pydub
 moviepy
 
 scrapy
+google-cloud-storage
