@@ -44,6 +44,7 @@ class DeezerRoute(Resource):
         #TODO:float -> int roundoff..
         #N.B. ffmpeg expects INT
         YD.download(query, int(resp['milliseconds'])/1000, int(resp['duration'])/1000+1)   
+        return 'lol'
 
 
 parser_youtubedownload = parser.copy()
