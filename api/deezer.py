@@ -1,7 +1,7 @@
 import requests
 import json
 
-def DeezerSearch(query):
+def DeezerSearch(title):
     session = requests.Session()
     response1 = session.get('https://www.deezer.com/ajax/gw-light.php?method=deezer.getUserData&api_version=1.0&api_token=')
     #view cookies with: session.cookies.get_dict()

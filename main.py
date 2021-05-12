@@ -39,16 +39,16 @@ class DeezerRoute(Resource):
     def post(self):
         #TODO: s 
         args = parser_deezer.parse_args()
-        query = args['query']
+        title = args['title']
 
         utils = Utilities()
         YD = YouTubeDownload()
 
-        lyrics_sync_json = DeezerSearch(query) 
-        resp = utils.lcs_index(query, lyrics_sync_json)
+        lyrics_sync_json = DeezerSearch(title) 
+        resp = utils.lcs_index(title, lyrics_sync_json)
         #TODO:float -> int roundoff..
         #N.B. ffmpeg expects INT
-        file_name = YD.download(query, int(resp['milliseconds'])/1000, int(resp['duration'])/1000+1)   
+        file_name = YD.download(title, int(resp['milliseconds'])/1000, int(resp['duration'])/1000+1)   
         cloud = Cloud()
         #TODO: create unique blob per invokation
         cloud.upload_blob("snipchat", file_name, "test1")
