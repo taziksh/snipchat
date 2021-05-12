@@ -31,7 +31,7 @@ class YouTubeDownload(Download):
         self.start = str(_start) 
         self.duration =  str(_duration)
         self.target = title + ".mp3"
-        with youtube_dl.YoutubeDL({'format': 'best'}) as yt_dl:
+        with youtube_dl.YoutubeDL({'format': 'best', 'verbose': True}) as yt_dl:
             result = yt_dl.extract_info(self.url, download=False)
             video = result['entries'][0] if 'entries' in result else result
         '''
