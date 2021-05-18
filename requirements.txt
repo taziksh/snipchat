@@ -24,5 +24,6 @@ youtube-dl
 pydub
 moviepy
 
+requests_html
 scrapy
 google-cloud-storage
