@@ -5,10 +5,10 @@ import json
 import os
 
 from api.download import YouTubeDownload
-from api.deezer import DeezerSearch 
 from api.text import Utilities 
 #inb4 namespace collisions
 from api.google import Cloud
+from api.deezer import DeezerAPIFactory
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -44,7 +44,8 @@ class DeezerRoute(Resource):
         utils = Utilities()
         YD = YouTubeDownload()
 
-        lyrics_sync_json = DeezerSearch(title) 
+        DeezerAPI = DeezerAPIFactory()
+        lyrics_sync_json = DeezerAPI.getLyrics(title) 
         resp = utils.lcs_index(title, lyrics_sync_json)
         #TODO:float -> int roundoff..
         #N.B. ffmpeg expects INT
