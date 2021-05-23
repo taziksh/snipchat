@@ -17,7 +17,7 @@ Snipchat returns audio snippets based on a given input phrase.
 - [] Search bar types i.e. general, playlists,artists, albums on Spotify. Example use case: "breakdown breakdown" to find JJBA IV op
 - [] Allow users to 'snip' custom track lengths
 - Authenticate with Spotify - BYOT ('token') to handle more users (OFC, not even relevant until we can scale the lyrics acquisition process haha)
-- Bill clients for Google Cloud storage
+- Bill clients for Google Cloud storage (https://cloud.google.com/storage/docs/requester-pays)
 
 ## Snipchat Web
 
