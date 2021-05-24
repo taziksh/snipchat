@@ -16,13 +16,22 @@ class DeezerAPIFactory:
         response2 = session.post('https://www.deezer.com/ajax/gw-light.php?method=song.getLyrics&api_version=1.0&api_token='+api_token, data={'sng_id': trackId})
         lyrics_sync_json = (json.loads(response2.text))['results']['LYRICS_SYNC_JSON']
         return lyrics_sync_json
+
     def getTrackId(self, query):
         session = HTMLSession()
         r = session.get('https://google.com/search?q='+query+' site:deezer.com')
-        a_html = r.html.find('#rso > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)')
-        url = a_html[0].attrs['href']
-        index = url.find('track/')
-        return url[index+6:]
+        #Top 5 Google Search results
+        for i in range(1, 5):
+            selector = f'div.g:nth-child({i}) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)'
+            a_html = r.html.find(selector, containing='track')
+            print('html: ', a_html)
+            if len(a_html) == 0:
+                continue
+            url = a_html[0].attrs['href']
+            print('url: ', url)
+            index = url.find('track')
+            if index != -1:
+                return url[index+6:]
                     
 
 

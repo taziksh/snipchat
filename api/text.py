@@ -65,6 +65,7 @@ class Utilities:
         phonemes = self.arpabet[term]
         return phonemes[0]
 
+    #TODO: match substring, not always entire string, with Deezer lyric 
     def lcs_index(self, query, lyrics_sync_json):
         lyrics = []
         for i in range(len(lyrics_sync_json)):
