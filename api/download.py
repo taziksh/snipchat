@@ -1,3 +1,4 @@
+import pysnooper
 from abc import ABC, abstractmethod 
 from azapi import AZlyrics
 import youtube_dl, subprocess
@@ -21,12 +22,13 @@ class AZLyrics(Download):
         
 class YouTubeDownload(Download):
     #TODO: heuristic for finding video w/ same length
-    #TODO: will downgrade of video affect audio quality
     def __init__(self):
         pass
-    def download(self, title, _start, _duration):
+    #TODO: will downgrade of video affect audio quality
+    #TODO: append artist name to file - possibly UUID for online storage
+    def download(self, title, spotifyDuration, _start, _duration):
         YS = YouTubeSearch()
-        id = YS.search(title)
+        id = YS.search(title, spotifyDuration)
         self.url = "https://www.youtube.com/watch?v=" + id
         self.start = str(_start) 
         self.duration =  str(_duration)

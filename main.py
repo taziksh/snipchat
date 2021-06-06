@@ -19,9 +19,9 @@ api.init_app(app)
 
 parser = reqparse.RequestParser()
 parser.add_argument('query', case_sensitive=False, help="")
-parser.add_argument('title', case_sensitive=False, help="Song title on YouTube")
+parser.add_argument('title', case_sensitive=False, help="")
+parser.add_argument('duration', type=int,  help="")
 parser.add_argument('start', help="")
-parser.add_argument('duration',  help="")
 #hint: add artist album track name for higher match probability
 
 @api.route('/test1')
@@ -40,16 +40,18 @@ class DeezerRoute(Resource):
         #TODO: s 
         args = parser_deezer.parse_args()
         title = args['title']
+        query = args['title']
+        duration = args['duration']
 
         utils = Utilities()
         YD = YouTubeDownload()
 
         DeezerAPI = DeezerAPIFactory()
         lyrics_sync_json = DeezerAPI.getLyrics(title) 
-        resp = utils.lcs_index(title, lyrics_sync_json)
+        resp = utils.lcs_index(query, lyrics_sync_json)
         #TODO:float -> int roundoff..
         #N.B. ffmpeg expects INT
-        file_name = YD.download(title, int(resp['milliseconds'])/1000, int(resp['duration'])/1000+1)   
+        file_name = YD.download(title, duration,  int(resp['milliseconds'])/1000, int(resp['duration'])/1000+1)   
         cloud = Cloud()
         #TODO: create unique blob per invokation
         cloud.upload_blob("snipchat", file_name, "test1.mp3")

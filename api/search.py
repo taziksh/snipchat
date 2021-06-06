@@ -1,8 +1,11 @@
+import pysnooper
 from abc import ABC, abstractmethod 
+import math
 
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import yaml
+from toolz.functoolz import pipe
 
 from youtubesearchpython import VideosSearch
 
@@ -35,6 +38,30 @@ class SpotifySearch(Search):
         return results 
 
 class YouTubeSearch(Search):
-    def search(self, track):
+    @pysnooper.snoop()
+    def search(self, track: str, spotifyDuration: int) -> str:
+        """
+        :param track: name of track on Spotify
+        :param spotifyDuration: length of track on Spotify
+        :returns: id of video on YouTube
+        """
         videos = VideosSearch(track.lower(), limit=3)
-        return videos.result()['result'][0]['id']
+        mostSimilarPair = ('', math.inf)
+        durationSimilarities = []
+        for i, video in enumerate(videos.result()['result']):
+            id = video['id']
+            duration = pipe(video['duration'], self.convertToMillis)
+            if abs(duration - spotifyDuration) < mostSimilarPair[1]:
+                mostSimilarPair = (id, abs(duration - spotifyDuration))
+        return mostSimilarPair[0]
+
+    def convertToMillis(self, time: str) -> int:
+      """
+      :param time: time as 'mm:ss'  
+      :returns: time in milliseconds
+      """
+      mm, ss = time.split(':')
+      mm = int(mm)
+      ss = int(mm)
+      ms = (mm * 60 + ss) * 1000
+      return ms

@@ -1,4 +1,6 @@
 pytest
+pysnooper
+toolz
 
 flask
 flask_restx
