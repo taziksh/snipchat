@@ -14,7 +14,7 @@ Snipchat returns audio snippets based on a given input phrase.
 - Classes are used for abstraction. The Abstract Factory design pattern is employed for the generic Download and Search functionality. This is then concretized with specific API-based classes e.g. 'YouTubeDownload' and 'YouTubeSearch'
 
 ## Features TBD
-- [] Search bar types i.e. general, playlists,artists, albums on Spotify. Example use case: "breakdown breakdown" to find JJBA IV op
+- [] Search bar types i.e. general, playlists,artists, albums on Spotify. Example use case: "breakdown breakdown" to find JJBA IV op. Note that YouTube also has playlists, which may or may not be relevant.
 - [] Allow users to 'snip' custom track lengths
 - Authenticate with Spotify - BYOT ('token') to handle more users (OFC, not even relevant until we can scale the lyrics acquisition process haha)
 - Bill clients for Google Cloud storage (https://cloud.google.com/storage/docs/requester-pays)
