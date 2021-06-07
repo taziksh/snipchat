@@ -1,4 +1,4 @@
 *.mp3
 *.mp4
-config.yml
+#config.yml
 /experiments/selenium/*

@@ -21,7 +21,7 @@ class SpotifySearch(Search):
         rootPath = os.path.abspath(__file__)
         rootDir = os.path.split(rootPath)[0]
 
-        with open('config.yml', 'r') as stream:
+        with open('credentials.yml', 'r') as stream:
             try:
                 self.config = yaml.safe_load(stream)
             except yaml.YAMLError as exception:
