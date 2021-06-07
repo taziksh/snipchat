@@ -1,4 +1,5 @@
 import pysnooper
+import os
 from abc import ABC, abstractmethod 
 import math
 
@@ -17,25 +18,29 @@ class Search(ABC):
 class SpotifySearch(Search):
     def __init__(self):
         config = None
+        rootPath = os.path.abspath(__file__)
+        rootDir = os.path.split(rootPath)[0]
+
         with open('config.yml', 'r') as stream:
             try:
                 self.config = yaml.safe_load(stream)
             except yaml.YAMLError as exception:
                 raise exception("Could not load config.yml")
 
-    #TODO: compare results, possibly based on additional info from frontend
-    #TODO: return track['duration_ms], track['album']['artists']
-    def search(self, query):
-        """ Return tracks that match keywords in given query. """
+    def search(self, query: str):
+        """
+        :param query: partial lyrics of some track
+        :returns: list of top 10 matching tracks 
+        """
         spotify = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=self.config['SPOTIFY_CLIENT_ID'], client_secret=self.config['SPOTIFY_CLIENT_SECRET']))
-        response = spotify.search(q=query, type='track', limit=3)
-        #TODO: only returning first result...?
-        results = ()
+        response = spotify.search(q=query, type='track', limit=10)
+        results = []
         print('query: ', query)
         for i, track in enumerate(response['tracks']['items']):
-            results = results + (track['name'], track['duration_ms'])
+            result = (track['name'], track['album']['artists'][0]['name'], track['album']['images'][0]['url'], track['duration_ms'])
+            results.append(result)
         print('search results: ', results)
-        return results 
+        return results
 
 class YouTubeSearch(Search):
     @pysnooper.snoop()

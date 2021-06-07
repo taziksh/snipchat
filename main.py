@@ -4,9 +4,10 @@ from flask_cors import CORS, cross_origin
 import json
 import os
 
+from api.search import SpotifySearch
 from api.download import YouTubeDownload
 from api.text import Utilities 
-#inb4 namespace collisions
+#TODO: inb4 namespace collisions
 from api.google import Cloud
 from api.deezer import DeezerAPIFactory
 
@@ -30,6 +31,18 @@ class Main(Resource):
         args = parser.parse_args()
         print(args)
         return args
+
+@api.route('/search/spotify')
+class Search(Resource):
+    def post(self):
+        """
+        :returns: Spotify API results
+        """
+        args = parser.parse_args()
+        query = args['query']
+        SS = SpotifySearch()
+        return SS.search(query)
+
 
 
 parser_deezer = parser.copy()

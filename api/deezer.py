@@ -6,7 +6,7 @@ from requests_html import HTMLSession
 class DeezerAPIFactory:
     def __init__(self):
         pass
-    def getLyrics(self, title):
+    def getLyrics(self, title: str):
         session = requests.Session()
         response1 = session.get('https://www.deezer.com/ajax/gw-light.php?method=deezer.getUserData&api_version=1.0&api_token=')
         #view cookies with: session.cookies.get_dict()
@@ -20,7 +20,11 @@ class DeezerAPIFactory:
         return lyrics_sync_json
 
 
-    def getTrackId(self, query):
+    def getTrackId(self, query: str) -> str:
+        """
+        :param query: track + artist Google search
+        :returns: deezer track ID
+        """
         session = HTMLSession()
         r = session.get('https://google.com/search?q='+query+' site:deezer.com')
         #Top 5 Google Search results
