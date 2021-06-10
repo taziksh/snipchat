@@ -43,7 +43,6 @@ class SpotifySearch(Search):
         return results
 
 class YouTubeSearch(Search):
-    @pysnooper.snoop()
     def search(self, track: str, spotifyDuration: int) -> str:
         """
         :param track: name of track on Spotify
