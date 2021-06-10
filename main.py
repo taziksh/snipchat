@@ -53,7 +53,7 @@ class DeezerRoute(Resource):
         #TODO: s 
         args = parser_deezer.parse_args()
         title = args['title']
-        query = args['title']
+        query = args['query']
         duration = args['duration']
 
         utils = Utilities()
