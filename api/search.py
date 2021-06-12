@@ -37,7 +37,7 @@ class SpotifySearch(Search):
         results = []
         print('query: ', query)
         for i, track in enumerate(response['tracks']['items']):
-            result = (track['name'], track['album']['artists'][0]['name'], track['album']['images'][0]['url'], track['duration_ms'])
+            result = {'title': track['name'], 'artist': track['album']['artists'][0]['name'], 'art': track['album']['images'][0]['url'], 'duration': track['duration_ms']}
             results.append(result)
         print('search results: ', results)
         return results
