@@ -32,6 +32,7 @@ class Main(Resource):
         print(args)
         return args
 
+@cross_origin()
 @api.route('/search/spotify')
 class Search(Resource):
     def post(self):
@@ -73,6 +74,7 @@ class DeezerRoute(Resource):
 
 
 parser_youtubedownload = parser.copy()
+@cross_origin()
 @api.route('/youtube/download')
 class YouTubeDownloadRoute(Resource):
     def post(self):
