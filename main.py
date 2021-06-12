@@ -68,8 +68,8 @@ class DeezerRoute(Resource):
         file_name = YD.download(title, duration,  int(resp['milliseconds'])/1000, int(resp['duration'])/1000+1)   
         cloud = Cloud()
         #TODO: create unique blob per invokation
-        cloud.upload_blob("snipchat", file_name, "test1.mp3")
-        public_url = cloud.make_blob_public("snipchat", "test1.mp3")
+        cloud.upload_blob("snipchat", file_name, file_name)
+        public_url = cloud.make_blob_public("snipchat", file_name)
         return public_url
 
 

@@ -32,8 +32,9 @@ class YouTubeDownload(Download):
         self.url = "https://www.youtube.com/watch?v=" + id
         self.start = str(_start) 
         self.duration =  str(_duration)
+        print(self.start, self.duration)
         #TODO: include timestamps in filename
-        self.target = title + ".mp3"
+        self.target = title + self.start + ":" + self.duration + ".mp3"
         with youtube_dl.YoutubeDL({'format': 'best', 'verbose': True}) as yt_dl:
             result = yt_dl.extract_info(self.url, download=False)
             video = result['entries'][0] if 'entries' in result else result
